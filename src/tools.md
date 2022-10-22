@@ -8,3 +8,6 @@ These are some useful tools I learnt along the way.
 [Godbolt](https://godbolt.org/)
 - IDE: [Neovim](https://neovim.io/), [VSCode](https://code.visualstudio.com/) 
 - Documentation: [mdBook](https://rust-lang.github.io/mdBook/)
+- Make use of markdown for pull request:
+![PR](./images/pr.png)
+
