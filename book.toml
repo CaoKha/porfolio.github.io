@@ -1,0 +1,30 @@
+[book]
+authors = ["Steve NGUYEN"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Nguyen Cao Kha's porfolio"
+
+[output.html]
+additional-js = []
+default-theme = "light"
+preferred-dark-theme = "ayu"
+no-section-label = true
+site-url = "/"
+
+[build]
+build-dir = "book"
+create-missing = true
+use-default-preprocessors = true
+
+[output.html.print]
+enable = true
+page-break = true
+
+[output.html.fold]
+enable = true
+level = 0
+
+[output.html.search]
+enable = true
+heading-split-level = 4
