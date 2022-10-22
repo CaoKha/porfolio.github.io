@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Nguyen Cao Kha&#x27;s porfolio</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="fff.html">FFF</a></li><li class="chapter-item "><a href="trimble.html">Trimble</a></li><li class="chapter-item "><a href="side_projects.html">Side Projects</a></li><li class="chapter-item "><a href="tools.html">Tools</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Nguyen Cao Kha&#x27;s porfolio</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="fff"><a class="header" href="#fff">FFF</a></h1>
+<h2 id="frontend"><a class="header" href="#frontend">Frontend</a></h2>
+<p><em>Portailbleu</em>
+<img src="./images/pb.png" alt="portailbleu" /></p>
+<h3 id="description"><a class="header" href="#description">Description:</a></h3>
+<p>This project is my first professional project in ReactJS without using any meta frameworks such as NextJS or NestJS.
+All the work in the front-end is almost 100% done by me. The v1.0 is done within 1 day. The v1.1, a refactor of v1.0 is also done in 1 day. 
+There are also some pull requests from other collaborators 
+which are all well verified by me before merging into the code source.<br />
+<br> Source code: </p>
+<ul>
+<li><a href="https://github.com/CaoKha/portailbleu">frontend</a> (private)</li>
+</ul>
+<h3 id="technologies"><a class="header" href="#technologies">Technologies:</a></h3>
+<p>ReactJS, Webpack, Nginx, FastAPI (Python)</p>
+<h2 id="fullstack"><a class="header" href="#fullstack">Fullstack</a></h2>
+<p><em>Licence club federale</em>
+<img src="./images/lcf.png" alt="LCF" /></p>
+<h3 id="description-1"><a class="header" href="#description-1">Description:</a></h3>
+<p>This project is more complicated so we finished it within 2 months.</p>
+<p><br> Source code: </p>
+<ul>
+<li><a href="https://github.com/CaoKha/lcf-ui">frontend</a> (private)</li>
+<li><a href="https://github.com/CaoKha/lcf-ws">backend</a> (private)</li>
+</ul>
+<h3 id="technologies-1"><a class="header" href="#technologies-1">Technologies:</a></h3>
+<p>Angular, FastAPI (Python), PostgreSQL</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="internship-at-trimble"><a class="header" href="#internship-at-trimble">Internship at Trimble</a></h1>
+<p align="center">
+<img src="./images/robot.png">
+</p>
+<h2 id="sensor-synchronization"><a class="header" href="#sensor-synchronization">Sensor Synchronization</a></h2>
+<p>Revan is a camera vision based project which will later be implemented on a forklift. The goal of this project is to achieve a localization with an error of less than 10 cm in indoor and outdoor environment. In order to realize this criteria, a robot was built using a camera, an IMU, a lidar and wheel encoders. These sensors are then fused together, which ameliorates the localization result.</p>
+<p>My work in this project is sensor hardware synchronization, which is handling the data received from camera (D435) and the data received from IMU (DMU11), making them in sync thus reduce error in sensor fusion method.</p>
+<h3 id="1-synchronize-camera-and-imu-by-putting-the-pulses-from-imu-to-camera"><a class="header" href="#1-synchronize-camera-and-imu-by-putting-the-pulses-from-imu-to-camera">1. Synchronize camera and IMU by putting the pulses from IMU to camera</a></h3>
+<p align="center">
+<img src="./images/cameraimu.png">
+</p>
+<p>In order to measure the signal coming from IMU, I used an oscilloscope and measure the signal coming out of the pin SYNC (pin 8) of the IMU</p>
+<p align="center">
+<img src="./images/signaldata.png">
+</p>
+<p>The fact is the signal that I got from pin 8 was not the 200 Hz ODR signal but rather a 1000 Hz pulse signal. The width of a pulse signal was 0.19 ms. This wasn’t a surprise because it was all written on the datasheet:</p>
+<p align="center">
+<img src="./images/sampling.png">
+</p>
+<p>The pulses at 1000 Hz are the indication of the data raw having been available inside the DMU11 chip. The data raw is then filtered and sent to computer through an USB port at 200 Hz. Still, 1000 couldn’t be divided by 15/30/60/90 (which is the frame rates of camera) because of there is a factor of 3 inside those frequencies. Therefore, these signal could not be synchronized.</p>
+<h3 id="2-phase-locked-loop"><a class="header" href="#2-phase-locked-loop">2. Phase locked loop</a></h3>
+<p align="center">
+<img src="./images/lockloop.png">
+</p>
+<p>At the beginning, we thought that when we sent an electrical pulse at the camera, the camera would give us an image. However, the design wasn’t that simple. A camera is not a trigger-shoot device. It is designed to maintain its frame at certain frequencies. That is why in its datasheet, it is recommend sending the pulses at pin 8 at exactly the frequency running by the camera.</p>
+<p>The camera used phased locked loop technique by comparing the phase of outsider signal and the current signal then correct the phase output of current signal to it. There is no option to adjust the camera, make it become trigger-shoot device. Therefore, we need to change our strategy. So now, let just time precisely the pulses and then interpolate the data</p>
+<p align="center">
+<img src="./images/sync.png">
+</p>
+<h3 id="3-risks-when-time-stamping-the-pulses"><a class="header" href="#3-risks-when-time-stamping-the-pulses">3. Risks when time stamping the pulses</a></h3>
+<p>Data is transported from a device to another device in 3 steps:</p>
+<ul>
+<li>
+<p>Logging (Data-ready)</p>
+</li>
+<li>
+<p>Sending</p>
+</li>
+<li>
+<p>Receiving</p>
+</li>
+</ul>
+<p>Pulses are the indicator of data that are ready to be sent only but are not considered as an indicator of the event “data received”!</p>
+<p align="center">
+<img src="./images/gnssraspberrypi.png">
+</p>
+<p>In order to verify my statement, I was using a GNSS as my clock to timestamps the pulse received from camera. Meanwhile, I wrote a testing code which timestamps images at each time I received one from the camera using timing library in C++. I observed there were an inconsistency between the time in millisecond dated with GNSS and the time in millisecond dated with C++ library. The camera was set at 30 Hz, which means I should receive a frame at each 33.33 ms. Observing the graphic I ploted using Octave, I noted there were some weird gaps of 66.66 ms between the data dated by C++ library. However, in the same plot, the pulses dated with GNSS showed a perfect uniform equally distributed time space among them. As a result, we could conclude that drop frame event has occurred. To explain, the camera was originally set to “auto exposure” hence, when the robot entered the dark, it took time to adjust frame before export it out of the camera.</p>
+<p>Now, we can conclude that timestamping the pulse isn’t a good choice because of its unreliability to guarantee data reception.</p>
+<h3 id="4-interpolation"><a class="header" href="#4-interpolation">4. Interpolation</a></h3>
+<p>To have two data from camera and IMU at the same time without synchronization, interpolation was perhaps a solution to be considered. Nevertheless, is this method easy to be implemented and functioned in real time?</p>
+<p>Interpolation is defined as the construction of new data points within the range of a discrete set of known data points. We were dealing with the time, which always increments. We could not stop the program in order to look back into the pass then create new data points. In the first glance, we might see that the interpolation method was not a real time method for this application. However, ROS data handling structure provided us such a way to overcome this issue. Remember that the timestamps were marked onto the data before being sent to ROS. For that reason, we could easily manipulate the data and its timestamp before sending it to ROS.</p>
+<p align="center">
+<img src="./images/dot_compare.png">
+</p>
+<p>The algorithm could be explained in brief as below:</p>
+<ul>
+<li>
+<p>First, detect the data and timestamp of IMU right before an image was received.</p>
+</li>
+<li>
+<p>At each time we received an image, we marked its time.</p>
+</li>
+<li>
+<p>Next, we wait until we received the next data from IMU, mark its time too.</p>
+</li>
+<li>
+<p>The last thing to do is create the new IMU data at the time we received the image.</p>
+</li>
+<li>
+<p>We loop this process until the end of the program.</p>
+</li>
+</ul>
+<p>As you might see on the picture above, I have succeeded to do it with bno055 IMU (100 Hz) and Realsense D435 camera set at 30 Hz. Though, the data order was first sent to ROS in chaos. However, with a little twist in the way we publish the data onto ROS, the data order was then fixed to the correct order.</p>
+<h3 id="5-extrapolation-vs-interpolation"><a class="header" href="#5-extrapolation-vs-interpolation">5. Extrapolation vs Interpolation</a></h3>
+<p>Extrapolation allows us to predict the future data based on its behavior in the pass. Though, it is very bad for consequently changing trajectory movement such as the movement of a robot in XY plane.</p>
+<p>This method was faster than interpolation but because of its ugly precision, this wasn’t the best way to approach our problem, whose goal is to reduce the error to less than 10 cm in navigation.</p>
+<h3 id="6-conclusion"><a class="header" href="#6-conclusion">6. Conclusion:</a></h3>
+<p>Calibration and synchronization are two important techniques when working with sensors. The goal of this project is to synchronize the sensors (camera and IMU) together. My tutor believe that the solution to the problem was by using the electrical pulse from the IMU as a trigger to camera, the camera then received the signal and output an image. After several experiments, it was revealed that the camera working principle does not support the first method. To overcome this issue, a pulse generator was used to control working rhythm of both the camera and the IMU. However, the IMU embedded design was not allowed itself to be configured as a slave in order to be controlled by the pulse generator. The only option left was using a high-level programming language such as C++ and ROS to manipulate the data and their timestamps of each sensors. Although, the accuracy of this method suffered from latency and throughput of their data stream outputs.</p>
+<p>Approach by software was considered from beginning as an imprecise technique because timing using a not real time operative system is the worst method ever. Though, multi-tasks was required for this application and the operative system offered multi-threads programming, which got the job done very quickly. Because of underivable frequency characteristic of the sensors, interpolation method was proposed and succeeded to implement in soft real time. The synchronization problem is solved but the precision and stability of the method has yet been optimized to their limit.</p>
+<h3 id="7-source-code"><a class="header" href="#7-source-code">7. Source code:</a></h3>
+<p><a href="https://github.com/CaoKha/Synchronization">https://github.com/CaoKha/Synchronization</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sumo-robot"><a class="header" href="#sumo-robot">Sumo robot</a></h1>
+<video controls muted>
+  <source src="https://video.wixstatic.com/video/ee9a71_11ab2e62fc6f4737a08cdf7317ce9403/720p/mp4/file.mp4">
+</video>
+<h2 id="1-writing-script-on-arduino"><a class="header" href="#1-writing-script-on-arduino">1. Writing script on Arduino</a></h2>
+<p align="center">
+<img src="https://static.wixstatic.com/media/ee9a71_cc0e458f05f34d3f810766b9d9f0068f~mv2.png/v1/fill/w_467,h_458,al_c,lg_1,q_85,enc_auto/ee9a71_cc0e458f05f34d3f810766b9d9f0068f~mv2.png" />
+</p>
+<p>Fascinating by finite machine methodology learned on TI-RSLK from Texas Instrument,
+I implemented it on my own robot at home but replacing the MSP432 microcontroller by arduino.
+The robot made decisions after each readings from luminosity sensor and infrared sensor.</p>
+<p><a href="https://github.com/CaoKha/SumoRobot">Source code</a></p>
+<h2 id="2-design-front-plate-for-3d-printing"><a class="header" href="#2-design-front-plate-for-3d-printing">2. Design front plate for 3d printing</a></h2>
+<p align="center">
+<img src="https://static.wixstatic.com/media/ee9a71_7c44bdd21b6447fab44ac622f119a848~mv2.png/v1/fill/w_569,h_859,al_c,q_90,enc_auto/ee9a71_7c44bdd21b6447fab44ac622f119a848~mv2.png" />
+</p>
+<p>Our robot need a front plate in order to attack the opponent. My task is to print the front plate of the robot. The other parts are carried out by my teammate.
+At the beginning, I found that Catia V5 is expensive to buy and my license in school has just ended.
+I searched on the Internet for a new open source software and I found Blender.
+Luckily, Blender 2.8 just went out and it is amazing and very easy to use.</p>
+<h2 id="3-testing"><a class="header" href="#3-testing">3. Testing</a></h2>
+<video controls muted>
+  <source src="https://video.wixstatic.com/video/ee9a71_9abe7b5120714381813439a306a70e83/720p/mp4/file.mp4">
+</video>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tools"><a class="header" href="#tools">Tools</a></h1>
+<p>These are some useful tools I learnt along the way.</p>
+<ul>
+<li>DevOps: 
+<a href="https://docs.google.com/presentation/d/1vzc_-vSQrVtxI7siZi_-uo1fqQ26lgl3a5m2djxngHc/edit?usp=sharing">Ansible</a>, Github Action, Azure Pipeline</li>
+<li>Performance test tool: 
+<a href="https://godbolt.org/">Godbolt</a></li>
+<li>IDE: <a href="https://neovim.io/">Neovim</a>, <a href="https://code.visualstudio.com/">VSCode</a> </li>
+<li>Documentation: <a href="https://rust-lang.github.io/mdBook/">mdBook</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </body>
+</html>
